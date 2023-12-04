@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Animal(name, legs, speed) {
+        this.name = name; // Tên động vật
+
+        // Kiểm tra nếu legs là số và không phải là số âm
+        if (typeof legs === "number" && legs >= 0) {
+          this.legs = legs; // Số lượng chân
+        } else {
+          // Gán giá trị mặc định nếu legs không hợp lệ
+          console.error("Invalid value for legs. Defaulting to 0.");
+          this.legs = 0;
+        }
+
+        this.speed = speed; // Tốc độ di chuyển
+      }
+      const animal = {
+        name: "Leo",
+        leg: 4,
+        speed: 50,
+      };
+
+      // Tạo một đối tượng để mô tả một con vẹt
+      // var parrot = new Animal("Parrot", 2, "Trung bình"); // Tên và tốc độ di chuyển của vẹt có thể tùy ý đặt
+
+      const parrot = new Object(animal);
+      parrot.name = "Parrot";
+      parrot.leg = 2;
+      parrot.speed = 10;
+      // Hiển thị đối tượng parrot trong Console
+      console.log(parrot);
+    </script>
+  </body>
+</html>
